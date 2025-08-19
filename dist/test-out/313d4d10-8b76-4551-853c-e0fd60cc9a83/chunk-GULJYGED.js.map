@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/service/product-ser.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\r\nimport {Product} from '../models/products.model';\r\nimport {Observable} from 'rxjs';\r\nimport {HttpClient} from '@angular/common/http';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ProductSer {\r\n  private apiUrl = 'https://fakestoreapi.com/products';\r\n\r\n  constructor(private http: HttpClient) {}\r\n\r\n  getProducts(): Observable<Product[]> {\r\n    return this.http.get<Product[]>(this.apiUrl);\r\n  }\r\n\r\n  getProductById(id: string) {\r\n    return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`);\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;IAQa;;;;;AARb;AAGA;AAKO,IAAM,aAAN,MAAMA,YAAU;MAGD;MAFZ,SAAS;MAEjB,YAAoB,MAAgB;AAAhB,aAAA,OAAA;MAAmB;MAEvC,cAAW;AACT,eAAO,KAAK,KAAK,IAAe,KAAK,MAAM;MAC7C;MAEA,eAAe,IAAU;AACvB,eAAO,KAAK,KAAK,IAAa,qCAAqC,EAAE,EAAE;MACzE;;;;;AAXW,iBAAU,WAAA;MAHtB,WAAW;QACV,YAAY;OACb;OACY,UAAU;;;",
+  "names": ["ProductSer"]
+}
