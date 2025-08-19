@@ -1,0 +1,57 @@
+<div class="cart-container">
+  <h1 class="cart-title">
+    Your Shopping Cart
+    <span class="cart-count">({{ cartItems.length }} items)</span>
+  </h1>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="cart-items">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <!-- Product Info -->
+        <div class="product-info">
+          <img [src]="item.product.image" alt="{{ item.product.title }}" class="product-image" />
+          <div class="product-details">
+            <h2 class="product-name">{{ item.product.title }}</h2>
+            <p class="price">Price: <span class="price-value">{{ item.product.price | currency }}</span></p>
+            <p class="total">Total: <span class="total-value">{{ item.product.price * item.quantity | currency }}</span></p>
+          </div>
+        </div>
+
+        <!-- Quantity Controls -->
+        <div class="quantity-controls">
+          <button (click)="decreaseQuantity(item.product.id)" class="quantity-btn decrease">-</button>
+          <span class="quantity-value">{{ item.quantity }}</span>
+          <button (click)="increaseQuantity(item.product.id)" class="quantity-btn increase">+</button>
+        </div>
+
+        <!-- Delete Button -->
+        <button (click)="removeItem(item.product.id)" class="delete-btn">
+          🗑
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Footer -->
+    <div class="cart-footer">
+      <h2 class="cart-total">Total: {{ getTotal() | currency }}</h2>
+      <div class="cart-actions">
+        <button (click)="clearCart()" class="clear-btn">
+          ❌Cancel
+        </button>
+        <button routerLink="/checkout" class="checkout-btn">
+           🛒Order
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Cart State -->
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      <p class="empty-message">Looks like you haven't added anything yet.</p>
+      <a routerLink="/" class="continue-shopping">
+        Continue Shopping
+      </a>
+    </div>
+  </ng-template>
+</div>

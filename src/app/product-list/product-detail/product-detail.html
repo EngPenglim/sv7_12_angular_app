@@ -1,0 +1,43 @@
+<div *ngIf="loading" class="loading-screen">
+  <div class="loading-spinner"></div>
+  <p>Loading product details...</p>
+</div>
+
+<div *ngIf="!loading && product" class="product-card">
+  <!-- Image with hover zoom -->
+  <div class="product-image-wrapper">
+    <img [src]="product.image" alt="{{product.title}}" class="product-image" />
+    <div class="image-overlay"></div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-details">
+    <div>
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | currency }}</p>
+      <div class="rating">
+        <div class="stars">★★★★★</div>
+        <span class="review-count">(42 reviews)</span>
+      </div>
+      <p class="product-description">{{ product.description }}</p>
+      
+      <div class="product-meta">
+        <span class="tag">Free Shipping</span>
+        <span class="tag">In Stock</span>
+      </div>
+    </div>
+
+    <!-- Quantity + Add to Cart -->
+    <div class="cart-controls">
+      <div class="quantity-selector">
+        <button (click)="decreaseQuantity()" class="quantity-btn decrease">-</button>
+        <span class="quantity-value">{{ quantity }}</span>
+        <button (click)="increaseQuantity()" class="quantity-btn increase">+</button>
+      </div>
+      <button (click)="addToCart()" class="add-to-cart-btn">
+        <span class="cart-icon">🛒</span>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+</div>
