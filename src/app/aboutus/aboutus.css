@@ -1,0 +1,80 @@
+.aboutus-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.aboutus-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.aboutus-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.aboutus-header p {
+  font-size: 18px;
+  color: #555;
+}
+
+.aboutus-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.aboutus-section {
+  flex: 1 1 280px;
+  background: #f9f9f9;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutus-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.aboutus-section h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.aboutus-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-section p {
+  margin: 6px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutus-container {
+    padding: 20px 10px;
+  }
+
+  .aboutus-header h1 {
+    font-size: 28px;
+  }
+
+  .aboutus-header p {
+    font-size: 16px;
+  }
+
+  .aboutus-section {
+    flex: 1 1 100%;
+  }
+}

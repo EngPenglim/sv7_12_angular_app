@@ -1,22 +1,30 @@
-<div class="product-card" [routerLink]="['/product', product.id]">
-  <div class="category-label">
-    <span>{{product.category}}</span>
+<div *ngIf="loading" class="skeleton-grid">
+    <div class="skeleton-card" *ngFor="let item of [1,2,3,4]">
+      <div class="skeleton-img"></div>
+      <div class="skeleton-text short"></div>
+      <div class="skeleton-text long"></div>
+    </div>
   </div>
 
-  <div class="image-container">
-    <img [src]="product.image" class="product-image">
-  </div>
-  
-  <h1 class="product-title">{{product.title}}</h1>
-  
-  <div class="price-box">
-    <p>{{product.price | currency}} or {{product.price | toKHR}}</p>
-  </div>
-  
-  <p class="product-description">{{product.description}}</p>
+  <div class="product-card" [routerLink]="['/product', product.id]">
+    <div class="category-label">
+      <span>{{product.category}}</span>
+    </div>
 
-  <button class="add-cart-btn"
-          (click)="addProductToCart(); $event.stopPropagation()">
-    Add To Cart
-  </button>
-</div>
+    <div class="image-container">
+      <img [src]="product.image" class="product-image">
+    </div>
+    
+    <h1 class="product-title">{{product.title}}</h1>
+    
+    <div class="price-box">
+      <p>{{product.price | currency}} or {{product.price | toKHR}}</p>
+    </div>
+    
+    <p class="product-description">{{product.description}}</p>
+
+    <button class="add-cart-btn"
+            (click)="addProductToCart(); $event.stopPropagation()">
+      Add To Cart
+    </button>
+  </div>

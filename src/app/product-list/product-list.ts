@@ -4,8 +4,6 @@ import {Product} from '../models/products.model';
 import {ProductSer} from '../service/product-ser';
 import {CommonModule} from '@angular/common';
 
-
-
 @Component({
   selector: 'app-product-list',
   imports: [
