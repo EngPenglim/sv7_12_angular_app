@@ -2,18 +2,22 @@
   <div class="nav-container">
     <!-- Logo -->
     <a routerLink="/" class="logo">
-      DRSHOP
+      DR.HOUSE
     </a>
 
     <!-- Navigation Items -->
     <div class="nav-items">
-      <a href="#" class="nav-link">Shop</a>
-      <a href="#" class="nav-link">Collections</a>
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Product</a>
       <a href="#" class="nav-link">About</a>
     </div>
 
     <!-- Cart Button - Now More Prominent -->
     <div class="cart-container">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search products...">
+      </div>
       <button routerLink="/cart" class="cart-button">
         <span *ngIf="cartCount > 0" class="cart-badge">
           {{ cartCount }}
