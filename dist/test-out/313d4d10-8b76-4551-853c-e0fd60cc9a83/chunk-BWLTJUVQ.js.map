@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/custom-pipe/to-khr-pipe.ts"],
-  "sourcesContent": ["import { Pipe, PipeTransform } from '@angular/core';\r\n\r\n@Pipe({\r\n  name: 'toKHR'\r\n})\r\nexport class ToKHRPipe implements PipeTransform {\r\n\r\n  transform(amount: number): unknown {\r\n    let res: number = amount * 4100;\r\n    let roundPrice: number = Math.round(res / 100) * 100;\r\n    let local_res: string = roundPrice.toLocaleString() + \" ៛\";\r\n    return local_res;\r\n  }\r\n}\r\n"],
-  "mappings": ";;;;;;;;;;;IAKa;;;;;AALb;AAKO,IAAM,YAAN,MAAMA,WAAS;MAEpB,UAAU,QAAc;AACtB,YAAI,MAAc,SAAS;AAC3B,YAAI,aAAqB,KAAK,MAAM,MAAM,GAAG,IAAI;AACjD,YAAI,YAAoB,WAAW,eAAc,IAAK;AACtD,eAAO;MACT;;AAPW,gBAAS,WAAA;MAHrB,KAAK;QACJ,MAAM;OACP;OACY,SAAS;;;",
-  "names": ["ToKHRPipe"]
-}

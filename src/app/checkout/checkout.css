@@ -1,265 +1,186 @@
-/* General Reset and Container */
+/* Container */
 .checkout-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  background-color: #f3f4f6;
 }
 
-/* Progress Steps */
-.progress-steps {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  flex: 1;
-  position: relative;
-}
-
-.step-number {
-  width: 40px;
-  height: 40px;
-  background-color: #e0e0e0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #666;
-  margin-bottom: 8px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.step.active .step-number {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.step-label {
-  font-size: 16px;
-  color: #666;
-}
-
-.step.active .step-label {
-  color: #007bff;
-  font-weight: bold;
-}
-
-/* Progress line between steps */
-.step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  width: 100%;
-  height: 2px;
-  background-color: #e0e0e0;
-  z-index: -1;
-}
-
-.step.active:not(:last-child)::after {
-  background-color: #007bff;
-}
-
-/* Checkout Content Layout */
+/* Layout */
 .checkout-content {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
 }
-
-.checkout-left,
-.checkout-right {
+.checkout-left, .checkout-right {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
+}
+
+/* Delivery Card */
+.delivery-card {
+  background: linear-gradient(145deg, #ffffff, #f0f4f8);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.delivery-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
 }
 
 /* Form Styling */
-.form-section {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-row {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
-
 .form-group label {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 8px;
   font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
 }
-
 .input {
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.3s;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
 }
-
 .input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.2);
+  background-color: #ffffff;
 }
 
-/* Order Summary Styling */
-.summary-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* Order Summary Card */
+.order-card {
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.order-card:hover {
+  transform: translateY(-2px);
 }
 
+/* Order Items */
 .order-items {
   margin-bottom: 20px;
 }
-
 .order-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
 }
-
 .item-info {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-
 .item-image {
   width: 60px;
   height: 60px;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease;
 }
-
+.item-image:hover {
+  transform: scale(1.05);
+}
 .item-title {
+  font-weight: 600;
   font-size: 16px;
-  color: #333;
   margin: 0;
+  color: #111827;
 }
-
 .item-qty {
   font-size: 14px;
-  color: #666;
-  margin: 5px 0 0;
+  color: #6b7280;
+  margin-top: 4px;
 }
-
 .item-price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  color: #1f2937;
 }
 
+/* Total Section */
 .summary-divider {
   height: 1px;
-  background-color: #eee;
+  background-color: #e5e7eb;
   margin: 20px 0;
 }
-
-.total-section {
-  margin-bottom: 20px;
-}
-
 .total-row {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  color: #1f2937;
 }
-
 .total-row.grand-total {
-  font-weight: bold;
   font-size: 18px;
+  font-weight: 700;
+  color: #3b82f6;
 }
 
+/* Checkout Button */
 .checkout-btn {
   width: 100%;
-  padding: 15px;
-  background-color: #007bff;
-  color: #fff;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
+  font-weight: 600;
   font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
-  transition: background-color 0.3s;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
 }
-
 .checkout-btn:hover {
-  background-color: #0056b3;
+  background-color: #60a5fa;
+  transform: translateY(-2px);
 }
 
+/* Secure Checkout */
 .secure-checkout {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 12px;
   font-size: 14px;
-  color: #666;
-}
-
-.lock-icon {
-  font-size: 16px;
+  color: #6b7280;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .progress-steps {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .step:not(:last-child)::after {
-    display: none;
-  }
-
   .checkout-content {
     flex-direction: column;
   }
-
   .form-row {
     flex-direction: column;
   }

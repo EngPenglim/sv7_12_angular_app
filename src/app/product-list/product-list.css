@@ -1,97 +1,79 @@
+/* 🌟 Product Grid */
 .product-grid {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: grid;
-  gap: 10px;                
-  padding: 16px;           
-  justify-items: center;  
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row on desktop */
+  gap: 12px; /* smaller gap for compact look */
+  padding: 12px;
+
+  /* Center the items */
+  justify-content: center; /* center grid when not full */
+  justify-items: center;   /* center each item */
 }
-[ngIf="loading"] {
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  margin: 20px 0;
+
+/* 🛍 Product Card with Border */
+.product-grid app-product-card {
+  background: linear-gradient(145deg, #ffffff, #f7f8fa);
+  border-radius: 12px;
+  border: 1.5px solid #e0e0e0;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  width: 100%; /* ensures cards scale nicely inside the grid */
+  max-width: 280px; /* keeps cards compact */
 }
+
+.product-grid app-product-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-color: #3b82f6;
+  background: linear-gradient(145deg, #e6f0ff, #ffffff);
+}
+
+/* ⏳ Loading State */
 .loading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
+  font-size: 1rem;
   color: #555;
-  font-size: 1.1rem;
+  text-align: center;
 }
-
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #4cafef;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.8rem;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
   animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-/* Container for the product grid */
-.product-grid {
-  display: flex;              /* Align cards in a row */
-  overflow-x: auto;           /* Enable horizontal scrolling */
-  padding: 16px;
-  gap: 16px;                  /* Space between cards */
-  scroll-snap-type: x mandatory; /* Snap to each card */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  to { transform: rotate(360deg); }
 }
 
-/* Each product card inside slider */
-.product-grid app-product-card {
-  flex: 0 0 auto;             /* Prevent shrinking */
-  scroll-snap-align: start;   /* Snap position */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 📱 Mobile Adjustments */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet */
+    justify-content: center;
+  }
 }
-
-/* Hover effect on cards */
-.product-grid app-product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Optional: hide scrollbar for cleaner look */
-.product-grid::-webkit-scrollbar {
-  display: none;
-}
-.product-grid {
-  -ms-overflow-style: none;   /* IE/Edge */
-  scrollbar-width: none;      /* Firefox */
-}
-
-/* Smooth scrolling */
-.product-grid {
-  scroll-behavior: smooth;
-}
-/* Banner container */
-:host::before {
-  content: "🔥 Summer Sale! Up to 50% Off 🔥"; /* Banner text */
-  display: block;
-  width: 100%;
-  background: linear-gradient(90deg, #ff6039, #feb47b);
-  color: white;
-  font-size: 22px;
-  font-weight: 700;
-  text-align: center;
-  padding: 16px 0;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Optional: make text responsive */
-@media (max-width: 768px) {
-  :host::before {
-    font-size: 18px;
-    padding: 12px 0;
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+  }
+  .loading-container {
+    padding: 2rem;
   }
 }

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/product-list/product-list.css"],
-  "sourcesContent": [".product-grid {\r\nfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n  display: grid;\r\n  gap: 10px;                \r\n  padding: 16px;           \r\n  justify-items: center;  \r\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\r\n}\r\n[ngIf=\"loading\"] {\r\n  font-size: 16px;\r\n  font-weight: 500;\r\n  text-align: center;\r\n  margin: 20px 0;\r\n}\r\n"],
-  "mappings": ";AAAA,CAAA;AACA;IAAA,UAAA;IAAA,MAAA;IAAA,MAAA;IAAA,OAAA;IAAA;AACE,WAAA;AACA,OAAA;AACA,WAAA;AACA,iBAAA;AACA,yBAAA,OAAA,QAAA,EAAA,OAAA,KAAA,EAAA;AACF;AACA,CAAA;AACE,aAAA;AACA,eAAA;AACA,cAAA;AACA,UAAA,KAAA;AACF;",
-  "names": []
-}

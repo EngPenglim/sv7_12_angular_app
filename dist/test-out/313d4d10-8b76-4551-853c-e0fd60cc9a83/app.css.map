@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/app.css"],
-  "sourcesContent": ["* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n"],
-  "mappings": ";AAAA;AACE,WAAA;AACA,UAAA;AACA,cAAA;AACF;",
-  "names": []
-}
